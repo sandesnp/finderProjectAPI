@@ -10,7 +10,7 @@ router.post('/', (req, res, next) => {
 		owneremail: req.body.owneremail,
 	})
 		.then((ownerA) => {
-			res.json(`Owner is created => ${ownerA.ownername}`);
+			res.json(ownerA);
 			console.log({
 				status: `Owner Created for ${ownerA.ownername}`,
 				Date: Date.now(),
