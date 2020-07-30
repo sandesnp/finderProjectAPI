@@ -25,10 +25,10 @@ const shopSchema = new mongoose.Schema(
 		shoplogo: {
 			type: String,
 		},
-		shopcoordinate: {
+		shoplocation: {
 			type: String,
 		},
-		shopLocation: {
+		shopcoordinate: {
 			lati: {
 				type: String,
 			},
