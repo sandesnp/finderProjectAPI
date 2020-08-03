@@ -15,7 +15,7 @@ const shopItems = new mongoose.Schema({
 
 const shopSchema = new mongoose.Schema(
 	{
-		shopowner: {
+		shopownerid: {
 			type: mongoose.Schema.Types.ObjectId,
 			ref: 'Owner',
 		},

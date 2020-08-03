@@ -5,7 +5,7 @@ const SHOP = require('../models/shop');
 router.post('/', (req, res, next) => {
 	SHOP.create(req.body)
 		.then((shopA) => {
-			res.json(`Shop is Registered for => ${shopA.shopowner}`);
+			res.json(shopA);
 			console.log({
 				status: `Shop Registered for ${shopA.sh}`,
 				Date: Date.now(),

@@ -7,6 +7,7 @@ const cors = require('cors');
 //Routes
 const RouteOwner = require('./routes/route_owner');
 const RouteShop = require('./routes/route_shop');
+const RouteImage = require('./routes/image_upload');
 
 //Using
 const app = express();
@@ -29,6 +30,8 @@ mongoose
 
 app.use('/owner', RouteOwner);
 app.use('/shop', RouteShop);
+app.use('/image', RouteImage);
+
 app.listen(process.env.PORT, () => {
 	console.log(`Application is running in locahost:${process.env.PORT}`);
 });
