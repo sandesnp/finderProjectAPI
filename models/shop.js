@@ -17,7 +17,7 @@ const shopSchema = new mongoose.Schema(
 	{
 		shopownerid: {
 			type: mongoose.Schema.Types.ObjectId,
-			ref: 'Owner',
+			ref: 'User',
 		},
 		shopname: {
 			type: String,
@@ -29,10 +29,10 @@ const shopSchema = new mongoose.Schema(
 			type: String,
 		},
 		shopcoordinate: {
-			lati: {
+			latitude: {
 				type: String,
 			},
-			long: {
+			longitude: {
 				type: String,
 			},
 			marker: {

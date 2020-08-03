@@ -1,9 +1,12 @@
 const express = require('express');
 const router = express.Router();
 const SHOP = require('../models/shop');
+const userAUTH = require('./Auth');
 
-router.post('/', (req, res, next) => {
-	SHOP.create(req.body)
+router.post('/', userAUTH.verifyUser, (req, res, next) => {
+	let SHOPA = new SHOP(req.body);
+	SHOPA.shopownerid = req.user._id;
+	SHOPA.save()
 		.then((shopA) => {
 			res.json(shopA);
 			console.log({

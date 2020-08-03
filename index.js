@@ -5,7 +5,7 @@ const dotevn = require('dotenv').config();
 const cors = require('cors');
 
 //Routes
-const RouteOwner = require('./routes/route_owner');
+const RouteUser = require('./routes/route_user');
 const RouteShop = require('./routes/route_shop');
 const RouteImage = require('./routes/image_upload');
 
@@ -28,7 +28,7 @@ mongoose
 		console.log('Successfully Connected to a mongoDB server');
 	});
 
-app.use('/owner', RouteOwner);
+app.use('/user', RouteUser);
 app.use('/shop', RouteShop);
 app.use('/image', RouteImage);
 
