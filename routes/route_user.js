@@ -20,8 +20,6 @@ router.post('/', (req, res, next) => {
 					}
 					let USERA = new USER({
 						userfullname: req.body.userfullname,
-						useraddress: req.body.useraddress,
-						userphonenumber: req.body.userphonenumber,
 						useremail: req.body.useremail,
 					});
 					USERA.password = hash;
@@ -34,6 +32,13 @@ router.post('/', (req, res, next) => {
 		})
 		.catch(next);
 	console.log('Signup Post');
+});
+
+router.get('/:email', (req, res, next) => {
+	USER.findOne({ useremail: req.params.email }).then((userA) => {
+		res.json(userA);
+		console.log({ status: 'Email Existence Checked', Date: Date.now() });
+	});
 });
 
 module.exports = router;

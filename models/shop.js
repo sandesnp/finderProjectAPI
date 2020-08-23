@@ -28,6 +28,9 @@ const shopSchema = new mongoose.Schema(
 		shoplocation: {
 			type: String,
 		},
+		shopphonenumber: {
+			type: String,
+		},
 		shopcoordinate: {
 			latitude: {
 				type: String,
