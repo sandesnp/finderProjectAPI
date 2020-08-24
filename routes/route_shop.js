@@ -10,7 +10,7 @@ router.post('/', userAUTH.verifyUser, (req, res, next) => {
 		.then((shopA) => {
 			res.json(shopA);
 			console.log({
-				status: `Shop Registered for ${shopA.sh}`,
+				status: `Shop Registered for ${shopA.shopname}`,
 				Date: Date.now(),
 			});
 		})

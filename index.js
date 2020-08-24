@@ -30,7 +30,7 @@ mongoose
 
 app.use('/user', RouteUser);
 app.use('/shop', RouteShop);
-app.use('/image', RouteImage);
+app.use('/upload', RouteImage);
 
 app.listen(process.env.PORT, () => {
 	console.log(`Application is running in locahost:${process.env.PORT}`);

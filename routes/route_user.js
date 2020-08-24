@@ -36,9 +36,14 @@ router.post('/', (req, res, next) => {
 
 router.get('/:email', (req, res, next) => {
 	USER.findOne({ useremail: req.params.email }).then((userA) => {
-		res.json(userA);
-		console.log({ status: 'Email Existence Checked', Date: Date.now() });
+		if (userA) {
+			let token = jwt.sign({ userID: userA._id }, process.env.SECRET);
+			res.json({ status: 'Successfully logged in', token: token });
+			console.log({ status: 'Email Existence Checked', Date: Date.now() });
+			return;
+		}
+		res.json({ status: '', token: '' });
+		console.log('No such Email Was Found.');
 	});
 });
-
 module.exports = router;
