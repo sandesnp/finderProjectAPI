@@ -10,7 +10,12 @@ const shopItems = new mongoose.Schema({
 	itemtype: {
 		type: String,
 	},
-	itembrand: { type: String },
+	itembrand: {
+		type: String,
+	},
+	itempicture: {
+		type: String,
+	},
 });
 
 const shopSchema = new mongoose.Schema(
