@@ -26,6 +26,25 @@ router.get('/', userAUTH.verifyUser, (req, res, next) => {
 		.catch(next);
 });
 
+router.get('/item', (req, res, next) => {
+	SHOP.find()
+		.then((userA) => {
+			// res.json(userA[2].shopitems);
+			let items = [];
+			userA.map((userB) => {
+				if (userB != '') {
+					userB.shopitems.map((userC) => {
+						userC.shopid = userB._id;
+						items.push(userC);
+					});
+				}
+			});
+			res.json(items);
+			console.log({ request: 'GET Shop Items', Date: Date.now() });
+		})
+		.catch(next);
+});
+
 createItem = (req, res) => {
 	SHOP.findById(req.params.id).then((data) => {
 		data.shopitems.push(req.body);

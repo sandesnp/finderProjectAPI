@@ -16,6 +16,9 @@ const shopItems = new mongoose.Schema({
 	itempicture: {
 		type: String,
 	},
+	shopid: {
+		type: String,
+	},
 });
 
 const shopSchema = new mongoose.Schema(
