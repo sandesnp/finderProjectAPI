@@ -28,14 +28,17 @@ router.get('/', userAUTH.verifyUser, (req, res, next) => {
 
 router.get('/item', (req, res, next) => {
 	SHOP.find()
-		.then((userA) => {
+		.then((shopA) => {
 			// res.json(userA[2].shopitems);
 			let items = [];
-			userA.map((userB) => {
-				if (userB != '') {
-					userB.shopitems.map((userC) => {
-						userC.shopid = userB._id;
-						items.push(userC);
+			shopA.map((shopB) => {
+				if (shopB != '') {
+					shopB.shopitems.map((shopC) => {
+						shopC.shopid = shopB._id;
+						shopC.shopcoordinate = shopB.shopcoordinate;
+						shopC.shoplogo = shopB.shoplogo;
+						shopC.shoplocation = shopB.shoplocation;
+						items.push(shopC);
 					});
 				}
 			});

@@ -19,6 +19,23 @@ const shopItems = new mongoose.Schema({
 	shopid: {
 		type: String,
 	},
+	shopcoordinate: {
+		latitude: {
+			type: String,
+		},
+		longitude: {
+			type: String,
+		},
+		marker: {
+			type: String,
+		},
+	},
+	shoplogo: {
+		type: String,
+	},
+	shoplocation: {
+		type: String,
+	},
 });
 
 const shopSchema = new mongoose.Schema(
