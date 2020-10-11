@@ -14,6 +14,7 @@ afterAll(async () => {
 	await mongoose.connection.close();
 });
 
+//tests
 describe('User  Schema test', () => {
 	// the code below is for insert testing
 	it('Add User is registered', () => {
